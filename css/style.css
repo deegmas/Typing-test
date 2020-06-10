@@ -1,0 +1,132 @@
+body 
+{
+    background-color: black; /* a changer pour modifier les thèmes */
+}
+
+h1  
+{ 
+    color: red;
+    text-align: center;
+}
+
+.sidenav
+{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black; /* mettre un dégrader de noir gris */
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+.sidenav a 
+{
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav a:hover
+{
+    color: gray;
+}
+
+.pagePrincipale
+{
+    margin-left: 160px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.pagePrincipale > div
+{
+    width: 100%;
+    line-height: 100%;
+}
+
+.texte 
+{
+    color: white;
+}
+
+#temps
+{
+    text-align: center;
+}
+
+#mot 
+{
+   /* text-align: center;*/
+    /*height: 150px;*/
+    /*margin-top: 100px;*/
+}
+
+#maSaisie
+{
+    width: 100%;
+    height: 50px;
+    font-size: 30px; /* 20 px */
+}
+
+
+.resultat {
+    color: white;
+    text-align: center;
+    display: none;
+}
+
+.vue
+{
+    border: 2px;
+    border-style: solid;
+    border-color: gray;
+    /*border-radius: 50px;*/
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.fond {
+    background-color: rgb(119, 119, 119);
+}
+
+.neutre {
+    color: white;
+}
+
+button {
+    width: 20%;
+    height: 25px;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 7px;
+    margin-top: 100px;
+    background-color: dimgrey;
+}
+
+.bouton {
+    color: black;
+}
+
+.param {
+    color: white;
+}
+
+.millieu {
+    text-align: center;
+}
+
+/*
+.stats {
+    color: white;
+}*/

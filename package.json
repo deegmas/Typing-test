@@ -1,0 +1,14 @@
+{
+  "name": "Typing test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Deegmas",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.5"
+  }
+}

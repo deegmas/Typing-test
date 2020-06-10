@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Test de rapidité</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <div class="sidenav">
+      <a href="index.html">Jouer</a>
+      <a href="Stats.html">Statistiques</a>
+      <a href="Param.html">Paramètres</a>
+    </div>
+
+    <section class="pagePrincipale">
+      <div class="texte">
+        <div class="progress-bar"><p id="temps">60</p></div>
+        <div class="vue"><p id="mot">Texte</p></div>
+        <input type="text" id="maSaisie" onkeyup="verificationText(event)">
+        <button class="bouton" onclick="recommencer()">Recommencer</button>
+      </div>
+      <div style="flex-basis: 400px">
+        <div class="resultat">
+          <p>Resultat : </p>
+          <p id="mpm">0 MPM</p>
+          <p>Frappes <span id="frappes">0|0 : 0</span></p>
+          <p>Précision <span id="precision">100%</span></p>
+          <p>Mots corrects <span id="motCorrect">0</span></p>
+          <p>Mots incorrects <span id="motIncorrect">0</span></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/typing.js"></script>
+  </body>
+</html>

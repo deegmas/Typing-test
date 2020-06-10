@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Test de rapidité</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/param.js"></script>
+  </head>
+  <body>
+
+    <div class="sidenav">
+      <a href="index.html">Jouer</a>
+      <a href="Stats.html">Statistiques</a>
+      <a href="Param.html">Paramètres</a>
+    </div>
+
+    <section class="pagePrincipale">
+      <div class="param">
+        <p class="millieu">Mes Paramètres : </p>
+        <p>Thème Blanc : </p> 
+        <input id="theme" type="checkbox" onclick="changeTheme()"> <!-- ui a revoir -->
+
+        <p>Reset les statistiques : </p>
+        <input id="reset" type="button" value="Reset" onclick="clearStat()">
+      </div>
+    </section>
+  </body>
+</html>
