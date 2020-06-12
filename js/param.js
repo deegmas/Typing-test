@@ -1,32 +1,58 @@
 let fs = require('fs');
 let os = require('os');
 
-// pour modifier le thème de l'application via un bouton
-// reset les stats avec modal de confirmation (reset le localstorage et le fichier)
-function changeTheme() {
-    var checkbox = document.getElementById("theme");
-
-    // mettre un switch
-    if (checkbox.checked == true) {
-        console.log("true");
-        // changer theme en white
-        document.body.style.backgroundColor = 'white';
-        // ... non fini
+// init theme 
+(function () {
+    if (localStorage.getItem('theme') === 'theme-blanc') {
+        document.documentElement.className = "theme-blanc";
+        document.getElementById("theme").checked = true;
     }
     else {
-        console.log("false");
-        // theme en black
-        document.body.style.backgroundColor = 'black';
+        document.documentElement.className = "theme-noir";
     }
+})();
+
+
+/**
+ * function permettant de changer de thème
+ */
+function changeTheme() {
+
+    var checkbox = document.getElementById('theme');
+
+    if (checkbox.checked == true) {
+        localStorage.setItem("theme", "theme-blanc");
+        document.documentElement.className = "theme-blanc";
+    }
+    else {
+        localStorage.setItem("theme", "theme-noir");
+        document.documentElement.className = "theme-noir";
+    }
+
+/*
+    if (localStorage.getItem('theme') === 'theme-blanc') {
+        localStorage.setItem("theme", "theme-noir");
+        document.documentElement.className = "theme-noir";
+    }
+    else {
+        localStorage.setItem("theme", "theme-blanc");
+        document.documentElement.className = "theme-blanc";
+    }*/
 }
+
+/**
+ * function permettant de reset les stats enregistrées 
+ */
 function clearStat() {
-    var home = os.homedir();
-    var dir = home + "/typingtest";
-    var filename = dir + "/stat.txt";
-    if (fs.existsSync(dir)) {
-        if (fs.existsSync(filename)) {
-            fs.unlinkSync(filename);
-            localStorage.removeItem("monLabel");
+    if(confirm("voulez-vous vraiment remettre à zéro vos statistiques ?")) {
+        var home = os.homedir();
+        var dir = home + "/typingtest";
+        var filename = dir + "/stat.txt";
+        if (fs.existsSync(dir)) {
+            if (fs.existsSync(filename)) {
+                fs.unlinkSync(filename);
+                localStorage.removeItem("monLabel");
+            }
         }
     }
 }

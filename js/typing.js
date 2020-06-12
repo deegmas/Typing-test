@@ -41,6 +41,16 @@ const word  = [ "voiture", "maison", "travail", "jouer", "clavier", "écran",
               "maintenant", "jamais", "bien", "par", "pays", "attendre", "quelque", "répondre",
               "grand", "vouloir", "premier", "monde", "avant", "comprendre", "regard", "quand" ];
 
+
+// init theme 
+(function () {
+  if (localStorage.getItem('theme') === 'theme-blanc') {
+      document.documentElement.className = "theme-blanc";
+  } else {
+      document.documentElement.className = "theme-noir";
+  }
+})();
+
 shuffleWord();
 document.getElementById("mot").children[cptMotActuel].classList.add("fond");
 document.getElementById("maSaisie").focus();
@@ -255,7 +265,7 @@ function myTimer() {
   }
   else {
     // fenetre modal
-    alert ('Partie terminé avec ' + motCorrect + ' mots corrects'); // supprimer ? bloquant (bloquer peux être le resultat)
+    alert ('Partie terminé avec ' + motCorrect + ' mots corrects');
     clearTimeout(tps);
     affichageResultat();
     // clear la saisie 

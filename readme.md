@@ -9,4 +9,3 @@ npm install
 ```
 electron .
 ```
-## Project in developement

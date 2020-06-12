@@ -1,87 +1,93 @@
-body 
-{
-    background-color: black; /* a changer pour modifier les thèmes */
+.theme-blanc {
+    --couleur-back: white;
+    --couleur-front: black;
+    --font-couleur: black;
+    --couleur-mot-fond:#808080;
+    --couleur-mot-neutre: black;
+
 }
 
-h1  
-{ 
-    color: red;
-    text-align: center;
+.theme-noir {
+    --couleur-back: black;
+    --couleur-front: white;
+    --font-couleur: white;
+    --couleur-mot-fond:#808080;
+    --couleur-mot-neutre: white;
 }
 
-.sidenav
-{
+body {
+    /*background-color: black;*/
+    background-color: var(--couleur-back);
+}
+
+.sidenav {
     height: 100%;
     width: 160px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black; /* mettre un dégrader de noir gris */
+    /*background-color: black;*/
+    background-color: var(--couleur-back);
     overflow: hidden;
     padding-top: 30px;
 }
 
-.sidenav a 
-{
+.sidenav a {
     padding: 6px 8px 6px 8px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    /*color: white;*/
+    color: var(--couleur-front);
     display: block;
 }
 
-.sidenav a:hover
-{
+.sidenav a:hover {
     color: gray;
 }
 
-.pagePrincipale
-{
+.pagePrincipale {
     margin-left: 160px;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.pagePrincipale > div
-{
+.pagePrincipale > div {
     width: 100%;
     line-height: 100%;
 }
 
-.texte 
-{
-    color: white;
+.texte {
+    /*color: white;*/
+    color: var(--font-couleur);
 }
 
-#temps
-{
+#temps {
     text-align: center;
 }
 
-#mot 
-{
-   /* text-align: center;*/
+#mot {
+    /* text-align: center;*/
     /*height: 150px;*/
     /*margin-top: 100px;*/
 }
 
-#maSaisie
-{
+#maSaisie {
     width: 100%;
     height: 50px;
-    font-size: 30px; /* 20 px */
+    font-size: 20px; 
+    outline-color: blue !important;
 }
 
 
 .resultat {
-    color: white;
+    /* color: white; */
+    color: var(--font-couleur);
     text-align: center;
     display: none;
 }
 
-.vue
-{
+.vue {
     border: 2px;
     border-style: solid;
     border-color: gray;
@@ -97,14 +103,21 @@ h1
 }
 
 .fond {
-    background-color: rgb(119, 119, 119);
+    /* background-color: rgb(119, 119, 119); */
+    background-color: var(--couleur-mot-fond);
 }
 
 .neutre {
-    color: white;
+    /* color: white; */
+    color: var(--couleur-mot-neutre);
 }
 
 button {
+    
+}
+
+.bouton {
+    /* color: black; */
     width: 20%;
     height: 25px;
     margin-left: 40%;
@@ -112,10 +125,7 @@ button {
     border-radius: 7px;
     margin-top: 100px;
     background-color: dimgrey;
-}
-
-.bouton {
-    color: black;
+    color: var(--couleur-front);
 }
 
 .param {
@@ -125,8 +135,3 @@ button {
 .millieu {
     text-align: center;
 }
-
-/*
-.stats {
-    color: white;
-}*/

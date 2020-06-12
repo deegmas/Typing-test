@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-noir">
   <head>
     <meta charset="UTF-8">
     <title>Test de rapidité</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/param.js"></script>
   </head>
   <body>
 
@@ -16,13 +15,15 @@
 
     <section class="pagePrincipale">
       <div class="param">
-        <p class="millieu">Mes Paramètres : </p>
-        <p>Thème Blanc : </p> 
-        <input id="theme" type="checkbox" onclick="changeTheme()"> <!-- ui a revoir -->
+        <p class="millieu texte">Mes Paramètres : </p>
+        <p class="texte">Theme blanc : </p> 
+        <!-- <button id="theme" type="button" onclick="changeTheme()"></button> -->
+        <input id="theme" type="checkbox" onclick="changeTheme()" />
 
-        <p>Reset les statistiques : </p>
+        <p class="texte">Reset les statistiques : </p>
         <input id="reset" type="button" value="Reset" onclick="clearStat()">
       </div>
     </section>
   </body>
+  <script src="js/param.js"></script>
 </html>

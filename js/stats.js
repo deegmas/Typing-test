@@ -1,6 +1,15 @@
 let fs = require('fs');
 let os = require('os');
 
+// init theme 
+(function () {
+    if (localStorage.getItem('theme') === 'theme-blanc') {
+        document.documentElement.className = "theme-blanc";
+    } else {
+        document.documentElement.className = "theme-noir";
+    }
+})();
+
 // stockage des données 
 var mpm = 0;
 var date = "";
