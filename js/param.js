@@ -12,7 +12,6 @@ let os = require('os');
     }
 })();
 
-
 /**
  * function permettant de changer de thème
  */
@@ -28,20 +27,10 @@ function changeTheme() {
         localStorage.setItem("theme", "theme-noir");
         document.documentElement.className = "theme-noir";
     }
-
-/*
-    if (localStorage.getItem('theme') === 'theme-blanc') {
-        localStorage.setItem("theme", "theme-noir");
-        document.documentElement.className = "theme-noir";
-    }
-    else {
-        localStorage.setItem("theme", "theme-blanc");
-        document.documentElement.className = "theme-blanc";
-    }*/
 }
 
 /**
- * function permettant de reset les stats enregistrées 
+ * function permettant de reset les stats enregistrées
  */
 function clearStat() {
     if(confirm("voulez-vous vraiment remettre à zéro vos statistiques ?")) {
@@ -52,6 +41,7 @@ function clearStat() {
             if (fs.existsSync(filename)) {
                 fs.unlinkSync(filename);
                 localStorage.removeItem("monLabel");
+                localStorage.removeItem("mesDatas");
             }
         }
     }

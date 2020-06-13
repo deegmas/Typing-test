@@ -1,12 +1,4 @@
-- 9 ) Revoir le design complet de la page principale
-
-- 12 ) voir le responsive de la page pour le nb de mot affiché 
-
-- 13 ) revoir le compteur et son affichage (design) et revoir l'affichage du resultat + (changer taille input)
-
-- 14 ) revoir le code 
-
-- 15) sauvegarder le localstorage 
+- 14 ) revoir le code pour du refacto
 
 -- prochainement : --
 

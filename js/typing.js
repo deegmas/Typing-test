@@ -251,6 +251,7 @@ function recommencer() {
   motIncorrect = 0;
   shuffleWord();
   document.getElementById("mot").children[cptMotActuel].classList.add("fond");
+  document.getElementById("maSaisie").style.display = 'block';
   document.getElementById("maSaisie").focus();
 }
 
@@ -264,14 +265,9 @@ function myTimer() {
     tps = setTimeout(myTimer, 1000);
   }
   else {
-    // fenetre modal
-    alert ('Partie terminé avec ' + motCorrect + ' mots corrects');
     clearTimeout(tps);
     affichageResultat();
-    // clear la saisie 
-    // relancer le timer 
-    // seconde = 60;
-    // ShuffleWord();
+    document.getElementById("maSaisie").style.display = 'none';
   }
 }
 

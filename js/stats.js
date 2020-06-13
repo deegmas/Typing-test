@@ -28,7 +28,7 @@ if (fs.existsSync(dir)) {
                 var donnees = data.trim();
                 result = donnees.split('\n');
 
-                // revue de code necessaire
+                // à revoir 
                 for (i=0; i < result.length; i++) {
                     if (i == result.length-1) {
                         date += result[i].split(',')[0];
@@ -38,6 +38,7 @@ if (fs.existsSync(dir)) {
                     }
                 }
                 
+                // a revoir
                 for (j=0; j < result.length; j++) {
                     if (j == result.length -1) {
                         monMpm += result[j].split(',')[1];
@@ -55,24 +56,17 @@ if (fs.existsSync(dir)) {
             }
         });
     }
-    else {
-        alert('aucun fichier trouvé'); // a supprimer  (test)
-    }
-}
-else {
-    alert('aucun dossier typingtest trouvé'); // a supprimer (test)
 }
 
-//console.log(localStorage.getItem("monLabel"));
-var montest = localStorage.getItem("monLabel");
+var courbeLabels = localStorage.getItem("monLabel");
 
 var timeFormat = 'DD/MM/YYYY HH:mm';
 
-var testSplit = montest.split(',');
+var mesLabels = courbeLabels.split(',');
 
-var blabla = localStorage.getItem('mesDatas');
+var courbeDatas = localStorage.getItem('mesDatas');
 
-var testSplitMpm = blabla.split(',');
+var mesDatas = courbeDatas.split(',');
 
 
 // affichage de la courbe
@@ -82,8 +76,8 @@ var config = {
         labels: [],
         datasets: [{
             label: 'MPM',
-            backgroundColor: 'rgb(255,99,132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(0, 102, 255)',
+            borderColor: 'rgb(0, 102, 255)',
             fill: false,
             data: [],
         }]
@@ -133,13 +127,14 @@ var config = {
 var ctx = document.getElementById('myChart').getContext('2d');
 var myLineChart = new Chart(ctx, config);
 
-for (i=0; i < testSplit.length; i++) {
-    config.data.labels.push(testSplit[i]);
+// ajout des labels
+for (i=0; i < mesLabels.length; i++) {
+    config.data.labels.push(mesLabels[i]);
 }
 myLineChart.update();
 
-// ajouter un mpm
-for (j=0; j < testSplitMpm.length; j++) {
-    config.data.datasets[0].data.push(testSplitMpm[j]);
+// ajout des mpm
+for (j=0; j < mesDatas.length; j++) {
+    config.data.datasets[0].data.push(mesDatas[j]);
 }
 myLineChart.update();
